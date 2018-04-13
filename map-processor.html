@@ -223,16 +223,17 @@ h1, h2, h3, section {
   display: none;
 }
 </style>
-<script src="./splaytree.js"></script>
-<script src="./codemap.js"></script>
-<script src="./csvparser.js"></script>
-<script src="./consarray.js"></script>
-<script src="./profile.js"></script>
-<script src="./profile_view.js"></script>
-<script src="./logreader.js"></script>
-<script src="./SourceMap.js"></script>
-<script src="./arguments.js"></script>
-<script src="./map-processor.js"></script>
+<script src="/core/splaytree.js"></script>
+<script src="/core/codemap.js"></script>
+<script src="/core/csvparser.js"></script>
+<script src="/core/consarray.js"></script>
+<script src="/core/profile.js"></script>
+<script src="/core/profile_view.js"></script>
+<script src="/core/logreader.js"></script>
+<script src="/core/SourceMap.js"></script>
+<script src="/core/arguments.js"></script>
+<script src="/map-processor.js"></script>
+<script src="/lib/client-loader.js"></script>
 <script>
 "use strict"
 // =========================================================================
@@ -400,6 +401,7 @@ function handleLoadText(text) {
   let mapProcessor = new MapProcessor();
   document.state.timeline = mapProcessor.processString(text);
 }
+window.handleLoadText = handleLoadText
 
 function handleKeyDown(event) {
   let nav = document.state.navigation;

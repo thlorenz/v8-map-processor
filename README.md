@@ -18,7 +18,7 @@ Derived from the one included with [v8/tools](https://github.com/v8/v8/tree/mast
 2. Run your app with d8, i.e. `d8 --trace-maps example/points.js`
     - note that this will run just the JavaScript engine, so things like `setTimeout`,
       `console.log` and `process` are not available
-3. Run `map-processor` in the same directory to load the produced `v8.log` into the maps
+3. Run `v8-map-processor` in the same directory to load the produced `v8.log` into the maps
   visualizer
 
 Once you load the visualizer scroll to the very right of the timeline to skip the maps that are

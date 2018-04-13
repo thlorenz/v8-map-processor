@@ -4,6 +4,8 @@ Processes and visualizes maps (aka hidden classes) created by v8 during executio
 
 Derived from the one included with [v8/tools](https://github.com/v8/v8/tree/master/tools).
 
+![map-processor](./assets/map-processor.gif)
+
 ## Installation
 
     npm install -g v8-map-processor

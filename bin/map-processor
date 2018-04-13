@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+'use strict'
+
+const { createServer, openWithV8LogFile } = require('../lib/map-processor.server')
+
+const fs = require('fs')
+const path = require('path')
+const { promisify } = require('util')
+const access = promisify(fs.access)
+
+const root = process.cwd()
+const v8LogFile = path.join(root, 'v8.log')
+
+async function canRead(p) {
+  const err = await access(p, fs.constants.R_OK)
+  return err == null
+}
+
+(async () => {
+  try {
+    if (!(await canRead(v8LogFile))) {
+      console.error('Map Processor - Problem:\n')
+      console.error('Unable to find a v8.log in the current directory.')
+      console.error('Please produce it via "<d8|v8> --trace-maps --trace-maps-details app.js"')
+      console.error('Install <d8|v8> via "npm install -g jsvu"')
+      return
+    }
+
+    const { address } = createServer(path.dirname(v8LogFile))
+    openWithV8LogFile({ address })
+  } catch (err) {
+    console.error(err)
+  }
+})()

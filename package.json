@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Processes and visualizes maps (aka hidden classes) created by v8 during execution.",
   "main": "v8-map-processor.js",
+  "bin": "./bin/map-processor",
   "repository": {
     "type": "git",
     "url": "git://github.com/thlorenz/v8-map-processor.git"

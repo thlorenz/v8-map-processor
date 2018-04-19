@@ -1,6 +1,6 @@
 {
   "name": "v8-map-processor",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Processes and visualizes maps (aka hidden classes) created by v8 during execution.",
   "main": "v8-map-processor.js",
   "bin": "./bin/map-processor",

@@ -12,8 +12,12 @@ const root = process.cwd()
 const v8LogFile = path.join(root, 'v8.log')
 
 async function canRead(p) {
-  const err = await access(p, fs.constants.R_OK)
-  return err == null
+  try {
+    await access(p, fs.constants.R_OK)
+    return true
+  } catch (err) {
+    return false
+  }
 }
 
 (async () => {

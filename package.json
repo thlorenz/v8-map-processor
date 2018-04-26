@@ -12,6 +12,7 @@
   "dependencies": {
     "connect": "~3.6.6",
     "ecstatic": "~3.2.0",
+    "files-provider": "~0.2.0",
     "opener": "~1.4.3",
     "v8-tools-core": "0.0.0"
   },

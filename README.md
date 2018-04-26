@@ -12,15 +12,20 @@ Derived from the one included with [v8/tools](https://github.com/v8/v8/tree/mast
 
 ## Usage
 
-1a. Install Node.js `>=v10` from [nodejs.org](https://nodejs.org) or elsewhere
-1b. Install d8 via `npm install -g jsvu`
-    - note that d8 is named `v8` so either link it to `d8` or use `v8` when typing the next
-      command
-2. Run your app with d8, i.e. `<node|d8> --trace-maps example/points.js`
-    - note that this will run just the JavaScript engine, so things like `setTimeout`,
-      `console.log` and `process` are not available
+### Create the Log File and Load it into the Browser
+
+1. Install a compatible Node.js or V8 runtime
+    - a) Install Node.js `>=v10` from [nodejs.org](https://nodejs.org) or elsewhere
+    - b) Install d8 via `npm install -g jsvu`
+        - note that d8 is named `v8` so either link it to `d8` or use `v8` when typing the next
+          command
+2. Run your app with the `--trace-maps` flag, i.e. `<node|d8> --trace-maps example/points.js`
+      - note that if running with `d8` functionality like `setTimeout`, `console.log` and `process` are
+        not available
 3. Run `v8-map-processor` in the same directory to load the produced `v8.log` into the maps
   visualizer
+
+### Interpreting the Result
 
 The Stats view will show constructor and function names which can be selected to show more
 information regarding related maps.
